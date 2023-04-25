@@ -1,0 +1,446 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ffffff;
+  background-color: #7b7b7b;
+  cursor: default;
+}
+
+/* ------------- sekcja 1 --------------- */
+
+/* ------ stopka u gory ------ */
+#sekcja1 {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+}
+
+.stopka-u-gory {
+  width: 100%;
+  height: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  background-color: #333;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+.miejsce-link-git {
+  height: 7rem;
+  width: 33%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link-github {
+  height: 7rem;
+  width: 7rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.github {
+  height: 3.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+}
+
+.miejsce-logo {
+  height: 7rem;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 7rem;
+}
+
+.miejsce-logowanie {
+  height: 7rem;
+  width: 33%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.login {
+  height: 3.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+
+/* ------ panel logowania ------ */
+
+.panel-logowania {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70rem;
+  height: 55rem;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.zamknij-panel {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 4rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 5;
+}
+
+.ukryty {
+  display: none;
+}
+
+.miejsce-logowania,
+.miejsce-rejestracji {
+  width: 100%;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.miejsce-logowania-naglowek,
+.miejsce-rejestracji-naglowek {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 2.2rem;
+  font-weight: 550;
+}
+
+.dane-tekst {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: #333;
+}
+
+#dane-logowanie {
+  height: 2.5rem;
+  width: 15rem;
+  border-radius: 0.3rem;
+  border: 1px solid;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  background-color: #3333333f;
+}
+
+.guzik-zaloguj,
+.guzik-zaloz-konto {
+  background-color: #333;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 0 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.guzik-zaloguj:hover,
+.guzik-zaloz-konto:hover {
+  background-color: #ffffff;
+  border: 1px solid;
+  color: #333;
+}
+
+.miejsce-przerwa {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-content: flex-start;
+  flex-direction: row;
+}
+
+.nic-miejsce {
+  width: 45%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nic {
+  width: 100%;
+  height: 0.2rem;
+  border-radius: 5rem;
+  background-color: #333;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+.lub {
+  width: 10%;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* ------ karuzela ze zdjeciami ------ */
+
+.karuzela {
+  width: 100%;
+  height: 5rem;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  background-color: #3333332d;
+  margin-top: 1rem;
+}
+
+.sklep {
+  position: absolute;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 1s;
+}
+
+.karuzela_guzik,
+.karuzela_guzik--lewe,
+.karuzela_guzik--prawe,
+.kropka {
+  display: none;
+}
+
+/* ------ 3 kolumny ------ */
+
+.kolumny {
+  width: 100%;
+  height: 33rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.kolumna-miejsce {
+  width: 30%;
+  height: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-radius: 0.3rem;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  background-color: #ececec25;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.kolumna-naglowek-miejsce {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid;
+}
+
+.kolumna-naglowek {
+  font-size: 2rem;
+  font-weight: 550;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.kolumna-tresc-miejsce {
+  width: 100%;
+  height: 24rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 2rem;
+}
+
+.kolumna-tresc {
+  font-size: 1.3rem;
+}
+
+.mail {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.mail-tresc {
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+#email,
+#tytul,
+#pyt1 {
+  width: 15rem;
+  height: 2rem;
+  padding: 0rem 1rem;
+  text-align: center;
+  border-radius: 0.3rem;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#message {
+  width: 20rem;
+  height: 5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  resize: none;
+  text-align: center;
+}
+
+.wyslij {
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 550;
+  margin-top: 1rem;
+  background-color: #333;
+  color: #ffffff;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
+}
+
+.wyslij:hover {
+  color: #333;
+  background-color: #ffffff;
+}
+/* ------ duzy tekst ------ */
+
+.duzy-tekst {
+  width: 100%;
+  height: 15rem;
+  margin-top: 1rem;
+  background-image: linear-gradient(
+      rgba(132, 132, 132, 0.7),
+      rgba(132, 132, 132, 0.7)
+    ),
+    url("img/bg2.png");
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.duzy-tekst-baner {
+  color: #ffffff;
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 550;
+}
+
+/* ----------------- sekcja 2 -------------------- */
+
+#sekcja2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  height: 10rem;
+  margin: 0;
+  background-color: #333;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tekst-po-lewej-miejsce {
+  height: 10rem;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-left: 2rem;
+}
+
+.miejsce-logo {
+  height: 10rem;
+  width: 33%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tekst-po-prawej-miejsce {
+  height: 10rem;
+  width: 33%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+/* .panel-naglowek {
+  font-size: 2.5rem;
+  background-color: #7b7b7b;
+  width: 90%;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+}
+
+.miejsce-wyboru,
+.kwota-dodanie,
+.data-dodanie,
+.zdjecie-dodanie {
+  width: 100%;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+} */
